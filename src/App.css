@@ -1,33 +1,132 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav {
+  background: rgb(53, 52, 52);
   color: white;
+  height: 6vh;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
+ul > div {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+img {
+  height: 40px;
+  width: 50px;
+  display: none;
+}
+
+ul > li {
+  font-size: 1.5em;
+}
+
+ul > div > li {
+  font-size: 1.3em;
+}
+
+.menu {
+  display: hidden;
+}
+
+.menu-close {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 0vw;
+  background: gray;
+  animation: closeMenu 1s linear;
+}
+
+.menu-open {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+  background: gray;
+  animation: openMenu 1s linear;
+}
+
+@keyframes openMenu {
   from {
-    transform: rotate(0deg);
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 0vw;
+    background: gray;
   }
   to {
-    transform: rotate(360deg);
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    background: gray;
   }
 }
+@keyframes closeMenu {
+  from {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    background: gray;
+  }
+  to {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 0vw;
+    background: gray;
+  }
+}
+
+@media (max-width: 1013px) {
+  ul > div > li {
+    display: none;
+  }
+  img {
+    display: block;
+  }
+  ul > div > li:nth-child(1) {
+    display: block;
+  }
+}
+
+/* .box-one {
+  width: 100px;
+  height: 100px;
+  background: red;
+  animation: move 2s linear;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}; */
+/* div {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+h1 {
+  animation-name: intro;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
+/* }
+@keyframes intro {
+  to {
+    transform: translateY(40vh);
+    font-size: 5em;
+  }
+} */
